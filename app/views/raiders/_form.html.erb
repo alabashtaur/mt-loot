@@ -1,0 +1,26 @@
+<%= form_with model: raider do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% raider.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label "Is this Raider Active? "%> 
+    <%= form.radio_button :active_ind, true %> 
+    <%= form.label :active_ind_yes, "Yes" %>
+    <%= form.radio_button :active_ind, false %> 
+    <%= form.label :active_ind_no, "No" %><br>
+
+    <% raider.errors.full_messages_for(:active_ind).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

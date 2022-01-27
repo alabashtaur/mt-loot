@@ -1,0 +1,11 @@
+<h1 align="center"> &ltMeme Team&gt Roster</h1>
+
+<ul>
+	<% @raiders.each do |raider| %>
+	  <li>
+	  	<%= link_to raider.name, raider %> | <%= raider.active_ind ? "Active" : "Inactive" %>
+	  </li>
+	<% end %>
+</ul>
+
+<%= link_to "Add a Raider", new_raider_path %>

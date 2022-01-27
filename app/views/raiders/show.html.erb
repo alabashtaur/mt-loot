@@ -1,0 +1,13 @@
+<h1>Look at this Raider!</h1>
+
+<ul> 
+   	  	<%= @raider.name %> | <%= @raider.active_ind ? "Active" : "Inactive" %>
+</ul>
+
+<li><%= link_to "Edit this entry", edit_raider_path(@raider) %></li>
+<li><%= link_to "Destroy", raider_path(@raider), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"} %>
+  </li>
+
+<%= link_to "Back Home", root_path %>
